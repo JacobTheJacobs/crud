@@ -11,57 +11,29 @@
 <body>
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="https://sourcecodester.com">Sourcecodester</a>
+			<a class="navbar-brand" href="https://www.youtube.com/watch?v=tVCUAXOBF7w&list=PL5SMXYhIcZ5J4Ou4s2FLWerNeOd89CY37&index=13&ab_channel=Pixies-Topic">👍</a>
 		</div>
 	</nav>
 
 	<div class="col-md-12">
-		<h3 class="text-primary">PHP - Simple To Do List App</h3>
+		<h3 class="text-primary">Sem Boards</h3>
 		<hr style="border-top:1px dotted #ccc;"/>
-		<div class="col-md-2"></div>
-		<div class="col-md-8">
+	
+		<div class="col-md-12">
 		
 			<?php include 'add_form.php'; ?>
 		
 		</div>
+		<div class="col-md-12">
+		
+		<?php include 'search.php'; ?>
+	
+	</div>
+
+
+		
 		<br /><br /><br />
-		<table class="table">
-			<thead>
-				<tr>
-					<th>#</th>
-					<th>S/N</th>
-					<th>Date</th>
-					<th>Action</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php
-					require 'conn.php';
-					$query = $conn->query("SELECT * FROM `sem` ORDER BY `id` ASC");
-					$count = 1;
-					while($fetch = $query->fetch_array()){
-				?>
-				<tr>
-					<td><?php echo $count++?></td>
-					<td><?php echo $fetch['sn_num']?></td>
-					<td><?php echo $fetch['gprs_date']?></td>
-					<td colspan="2">
-					
-							<?php
-								if($fetch['is_complete'] != 1){
-									echo 
-									'<a href="update_task.php?id='.$fetch['id'].'" class="btn btn-success">update</a> |';
-								}
-							?>
-							 <a href="delete_task.php?id=<?php echo $fetch['id']?>" class="btn btn-danger">delete</a>
-					
-					</td>
-				</tr>
-				<?php
-					}
-				?>
-			</tbody>
-		</table>
+	
 	</div>
 </body>
 </html>
