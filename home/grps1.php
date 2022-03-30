@@ -78,6 +78,7 @@ if (isset($_POST['submit'])) {
       
   
       //insert data into table
+      
      
       $sql = "INSERT INTO `sem`(`sn_num`, `gprs_date`, `po_number`, `gprs_description`) VALUES ('$sn_num','$gprs_date','$po_number','$gprs_description')";
 

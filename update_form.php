@@ -14,6 +14,20 @@
        
 ?>
 
+<?php
+if (isset($_POST['submit'])) {
+
+    //get all the values from the form
+    $sn_num = $_POST['sn_num'];
+    $gprs_date = $_POST['gprs_date'];
+    $is_complete = $_POST['is_complete'];
+    $id = $_POST['id'];
+    
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,38 +51,102 @@
     <br />
     <h2 align="center"></h2><br />
     <!--TABS-->
-    <form action="grps.php" method="post">
-    <div class="tab-pane active" id="gprs_details">
-        <div class="panel panel-default">
-            <div class="panel-heading">GPRS Details</div>
-            <div class="panel-body">
-                <div class="form-group">
-                    <label>Sem Serial Number</label>
-                    <input type="text" name="gprs_sn_number" id="gprs_sn_number" class="form-control" />
-                    <span id="error_sn" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label>Sem PO Number</label>
-                    <input type="text" name="gprs_po_number" id="gprs_po_number" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <label>GPRS Description</label>
-                    <input type="text" name="gprs_description" id="gprs_description" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <label>GPRS Date</label>
-                    <input type="date" name="gprs_gprs_date" id="gprs_gprs_date" class="form-control" />
-                    <span id="error_gprs_gprs_date" class="text-danger"></span>
-                </div>
-                <br />
-                <div align="center">
-                    <input type="submit" name="submit" id="submit" class="btn btn-success btn-lg" value="Complete" />
-                    <button type="button" name="next" id="btn_gprs_details_next" class="btn btn-info btn-lg">Next</button>
-                </div>
-                <br />
+    <form action="update_form.php" method="post">
+   
+<div class="tab-pane active" >
+    <div class="panel panel-default">
+        <div class="panel-heading">USR Repair Details</div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label>Sem Serial Number</label>
+                <input type="text" name="sn_num"  class="form-control" value="<?php echo $fetch['sn_num']?>"/>
+             
             </div>
+            <div class="form-group">
+                <label>Sem PO Number</label>
+                <input type="text" name="po_number"  class="form-control" value="<?php echo $fetch['po_number']?>"/>
+             
+            </div>
+            <div class="form-group">
+                <label>GPRS Description</label>
+                <input value="<?php echo $fetch['gprs_description']?>" type="text" name="gprs_description" class="form-control" />
+               
+            </div>
+            <div class="form-group">
+                <label>GPRS Date</label>
+                
+                <input value="<?php echo $fetch['gprs_date']?>" type="date" name="gprs_date"  class="form-control"  />
+           
+            </div>
+            <div class="form-group">
+                <label>MARLOG Date</label>
+                
+                <input value="<?php echo $fetch['marlog_date']?>" type="date" name="marlog_date"  class="form-control"  />
+            
+            </div>
+            <div class="form-group">
+                <label>SCAT Date</label>
+                
+                <input value="<?php echo $fetch['scat_date']?>"  type="date" name="scat_date"  class="form-control" />
+             
+            </div>
+
+            <div class="form-group">
+                <label>SCAT SCRAP</label>
+                <input value="<?php echo $fetch['scat_scrap_desc']?>" type="text"  name="scat_scrap_desc" class="form-control"   />
+            </div>
+            <div class="form-group">
+                <label>Testing Date</label>
+                
+                <input value="<?php echo $fetch['testing_date']?>" type="date" name="testing_date" i class="form-control"  />
+        
+            </div>
+            <div class="form-group">
+                <label>Testing Failed</label>
+
+                <input value="<?php echo $fetch['testing_fail_desc']?>" disabled="disabled" type="text" name="testing_fail_desc" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Marlog 2 Date Fail</label>
+                
+                <input value="<?php echo $fetch['marlog2_fail_date']?>" type="date" name="marlog2_fail_date"  class="form-control"  />
+
+            </div>
+            <div class="form-group">
+                <label>GPRS 2 Date</label>
+                <input value="<?php echo $fetch['grps2_date']?>" type="date" name="grps2_date"  class="form-control"  />
+               
+            </div>
+            <div class="form-group">
+                <label>Marlog 2 Date Pass</label>
+                
+                <input value="<?php echo $fetch['marlog2_pass_date']?>" type="date" name="marlog2_pass_date"  class="form-control"  />
+               
+            </div>
+            <div class="form-group">
+                <label>USR Date</label>
+                
+                <input value="<?php echo $fetch['usr_date']?>" type="date" name="usr_date" class="form-control"  />
+      
+            </div>
+            <div class="form-group">
+                <label>USR Repair Date</label>
+                
+                <input value="<?php echo $fetch['usr_repair_date']?>" type="date" name="usr_repair_date"  class="form-control"  />
+         
+            </div>
+            <div class="form-group">
+                <label>Is Repaired?</label>
+                <input value="<?php echo $fetch['usr_repair_desc']?>" type="text" name="usr_repair_desc" class="form-control"  />
+            </div>
+            <br />
+            <div align="center">
+                <input type="submit" name="submit"  class="btn btn-success btn-lg" value="Complete" />
+            </div>
+            <br />
         </div>
     </div>
+</div>
 </form>
 </div>
 
